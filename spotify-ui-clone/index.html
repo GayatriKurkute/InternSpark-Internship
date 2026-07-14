@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <!-- Font Awesome for iconic Spotify icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="nav-links">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+            </div>
+            <div class="library">
+                <div class="library-header">
+                    <button class="lib-btn"><i class="fa-solid fa-book"></i> Your Library</button>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="lib-box">
+                    <p class="box-p1">Create your first playlist</p>
+                    <p class="box-p2">It's easy, we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="sticky-nav">
+                <div class="nav-icons">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-chevron-right hide-mobile"></i>
+                </div>
+                <div class="nav-options">
+                    <button class="badge hide-mobile">Explore Premium</button>
+                    <button class="badge dark-badge"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                    <i class="fa-regular fa-user user-icon"></i>
+                </div>
+            </nav>
+
+            <!-- Cards Sections -->
+            <h2>Recently Played</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=300" alt="Top 50" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily update of the most played tracks right now...</p>
+                    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
+
+            <h2>Trending now near you</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300" alt="Mega Hits" class="card-img">
+                    <p class="card-title">Mega Hits</p>
+                    <p class="card-info">The biggest hits of the week compiled just for you.</p>
+                    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300" alt="Lofi Beats" class="card-img">
+                    <p class="card-title">Lofi Chill</p>
+                    <p class="card-info">Relaxing lo-fi beats to keep your focus sharp.</p>
+                    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+        </main>
+
+        <!-- PLAYBACK CONTROLS BAR -->
+        <footer class="music-player">
+            <!-- Left: Album Info -->
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=100" alt="Current song" class="album-img">
+                <div class="album-text">
+                    <p class="song-title">Daylight</p>
+                    <p class="song-artist">David Kushner</p>
+                </div>
+                <i class="fa-regular fa-heart heart-icon"></i>
+            </div>
+
+            <!-- Center: Player Controls -->
+            <div class="player">
+                <div class="player-controls">
+                    <i class="fa-solid fa-shuffle control-icon"></i>
+                    <i class="fa-solid fa-backward-step control-icon"></i>
+                    <i class="fa-solid fa-circle-play control-icon play-pause-btn" style="font-size: 2rem; opacity: 1;"></i>
+                    <i class="fa-solid fa-forward-step control-icon"></i>
+                    <i class="fa-solid fa-repeat control-icon"></i>
+                </div>
+                <div class="playback-bar">
+                    <span class="curr-time">0:00</span>
+                    <input type="range" min="0" max="100" class="progress-bar" value="0">
+                    <span class="tot-time">3:33</span>
+                </div>
+            </div>
+
+            <!-- Right: Volume & Utilities -->
+            <div class="controls">
+                <i class="fa-regular fa-square-caret-right control-icon"></i>
+                <i class="fa-solid fa-microphone control-icon"></i>
+                <i class="fa-solid fa-bars control-icon"></i>
+                <i class="fa-solid fa-volume-high control-icon"></i>
+                <input type="range" min="0" max="100" class="volume-bar" value="70">
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
