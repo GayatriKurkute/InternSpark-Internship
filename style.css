@@ -1,7 +1,138 @@
-html {
-  scroll-behavior: smooth;
+/* --- 1. Base Setup & Cheerful Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-section {
-  padding: 80px 0;
+body {
+    /* Cheerful background gradient (Peach to Pink) */
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- 2. Clean App Card --- */
+.todo-container {
+    background: #ffffff; /* Stark white card keeps it decent */
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* --- 3. Input & Add Button Row --- */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Bright blue focus state */
+#task-input:focus {
+    border-color: #4a90e2;
+}
+
+#task-input::placeholder {
+    color: #a0a0a0;
+}
+
+/* Accent Button (Mint Green) */
+#add-btn {
+    background-color: #2ecc71; /* Cheerful, vibrant green */
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#add-btn:hover {
+    background-color: #27ae60;
+}
+
+/* --- 4. The Interactive List --- */
+#task-list {
+    list-style: none;
+}
+
+#task-list li {
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+#task-list li:hover {
+    background: #f9f9f9;
+}
+
+.task-text {
+    flex: 1;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+}
+
+/* --- 5. Interactive States --- */
+
+/* Completed State (Soft Lavender) */
+#task-list li.completed {
+    background: #f3e5f5; /* Light lavender background */
+    border-color: #e1bee7;
+}
+
+#task-list li.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c; /* Red delete button */
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: rgba(231, 76, 60, 0.1);
 }
