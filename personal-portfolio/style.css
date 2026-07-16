@@ -1,0 +1,75 @@
+/* Custom Global Adjustments */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0d1117; /* Dark elegant canvas background */
+  color: #c9d1d9;
+}
+
+section {
+  padding: 100px 0; /* Slightly more spacious breathing room */
+}
+
+/* Glassmorphism Navbar effect */
+.navbar-custom {
+  background: rgba(13, 17, 23, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Interactive Cards & Skill Boxes */
+.portfolio-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background-color: #161b22 !important;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 15px rgba(13, 110, 253, 0.2) !important;
+}
+
+.skill-box {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background-color: #161b22 !important;
+}
+
+.skill-box:hover {
+  transform: scale(1.05);
+  background-color: #21262d !important;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.25);
+}
+
+/* Soft glowing visual accents */
+.accent-glow {
+  position: relative;
+}
+.accent-glow::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(13, 110, 253, 0.15);
+  filter: blur(80px);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+}
+
+/* Customizing Form Elements for Dark Mode */
+.form-control-dark {
+  background-color: #0d1117 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+.form-control-dark:focus {
+  background-color: #161b22 !important;
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
