@@ -1,0 +1,279 @@
+/* --- 1. Base Setup & Fluid Transitions --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    /* Ultra-cool cosmic pastel gradient */
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Ambient Floating Background Orbs --- */
+.bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: #ff6a88;
+    top: 10%;
+    left: 15%;
+}
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: #4a90e2;
+    bottom: 10%;
+    right: 15%;
+}
+
+/* --- 2. Premium Glassmorphism Container Card --- */
+.todo-container {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+header h2 .title-dot {
+    color: #ff6a88;
+    font-size: 32px;
+}
+
+.todo-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* --- 3. Input & Interactive Send Row --- */
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+#task-input {
+    width: 100%;
+    padding: 16px 16px 16px 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    font-size: 14px;
+    color: #ffffff;
+    outline: none;
+}
+
+#task-input:focus {
+    border-color: #4a90e2;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(74, 144, 226, 0.2);
+}
+
+#task-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* Modern Gradient CTA Button */
+#add-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+#add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.5);
+}
+
+#add-btn:active {
+    transform: translateY(0);
+}
+
+/* --- 4. The Interactive List Items --- */
+#task-list {
+    list-style: none;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Custom Scrollbar for list container */
+#task-list::-webkit-scrollbar {
+    width: 4px;
+}
+#task-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+#task-list li {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform-origin: center;
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#task-list li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    cursor: pointer;
+}
+
+/* Custom Checkbox Rings with Radial Gradient Borders */
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #2ecc71;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.task-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* --- Completed States (Soft Translucent Purple Glow) --- */
+#task-list li.completed {
+    background: rgba(156, 39, 176, 0.1);
+    border-color: rgba(156, 39, 176, 0.25);
+}
+
+#task-list li.completed .custom-checkbox {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+/* Checkmark indicator tick inside circle */
+#task-list li.completed .custom-checkbox::after {
+    content: "\b7";
+    font-size: 26px;
+    color: white;
+    position: absolute;
+    line-height: 0;
+    top: 45%;
+}
+
+#task-list li.completed .task-text {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Clean Neomorphic Delete Action Buttons */
+.delete-btn {
+    background: rgba(231, 76, 60, 0.1);
+    border: none;
+    color: #e74c3c;
+    font-size: 14px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.delete-btn:hover {
+    background: #e74c3c;
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Entry Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

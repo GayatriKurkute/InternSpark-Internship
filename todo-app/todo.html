@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative To-Do</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons for modern, crisp UI graphics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Decorative Glow Orbs in the Background -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="todo-container">
+        <header>
+            <h2>My Tasks <span class="title-dot">.</span></h2>
+            <p class="todo-subtitle">Stay organized, stay creative</p>
+        </header>
+        <div class="input-section">
+            <div class="input-wrapper">
+                <i class="bi bi-plus-circle input-icon"></i>
+                <input type="text" id="task-input" placeholder="What's your next move?">
+            </div>
+            <button id="add-btn">
+                <span>Add</span>
+                <i class="bi bi-send-fill"></i>
+            </button>
+        </div>
+
+        <!-- The list is now empty and ready for your JavaScript script -->
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
